@@ -1,0 +1,46 @@
+# Entorno virtual Python
+.venv/
+venv/
+ENV/
+env/
+
+# Caché Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Ficheros de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Base de datos local
+*.db
+*.sqlite
+*.sqlite3
+
+# Archivos de registro
+*.log
+
+# Credenciales y variables de entorno
+.env
+.env.local
+.env.*.local
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Archivos generados
+*.pdf
+!ARQUITECTURA_SOA_INFORME.pdf
+
+# Archivos del sistema
+.DS_Store
+*.pyc
