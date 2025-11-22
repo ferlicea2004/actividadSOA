@@ -1,0 +1,104 @@
+{
+  "info": {
+    "name": "UAU - Actividad",
+    "_postman_id": "uau-actividad",
+    "description": "Colección con ejemplos para SOAP (enrollments) y REST (grades)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "SOAP - GetEnrollments",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "text/xml" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <GetEnrollments>\n      <student_id>1</student_id>\n    </GetEnrollments>\n  </soap:Body>\n</soap:Envelope>"
+        },
+        "url": { "raw": "http://localhost:5000/soap", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["soap"] }
+      }
+    },
+    {
+      "name": "SOAP - CreateEnrollment",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "text/xml" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <CreateEnrollment>\n      <student_id>2</student_id>\n      <course_id>3</course_id>\n      <status>enrolled</status>\n    </CreateEnrollment>\n  </soap:Body>\n</soap:Envelope>"
+        },
+        "url": { "raw": "http://localhost:5000/soap", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["soap"] }
+      }
+    },
+    {
+      "name": "REST - List Grades",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5001/api/grades", "protocol": "http", "host": ["localhost"], "port": "5001", "path": ["api", "grades"] }
+      }
+    },
+    {
+      "name": "REST - Create Grade",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"enrollment_id\": 1, \"grade\": 88.5}"
+        },
+        "url": { "raw": "http://localhost:5001/api/grades", "protocol": "http", "host": ["localhost"], "port": "5001", "path": ["api", "grades"] }
+      }
+    },
+    {
+      "name": "REST - List Students",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5001/api/students", "protocol": "http", "host": ["localhost"], "port": "5001", "path": ["api", "students"] }
+      }
+    },
+    {
+      "name": "REST - Create Student",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"student_number\": \"20230004\", \"first_name\": \"Ana\", \"last_name\": \"Martínez\", \"email\": \"ana@uav.edu.mx\"}"
+        },
+        "url": { "raw": "http://localhost:5001/api/students", "protocol": "http", "host": ["localhost"], "port": "5001", "path": ["api", "students"] }
+      }
+    },
+    {
+      "name": "REST - List Courses",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5001/api/courses", "protocol": "http", "host": ["localhost"], "port": "5001", "path": ["api", "courses"] }
+      }
+    },
+    {
+      "name": "REST - Create Course",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"code\": \"QUI101\", \"name\": \"Química I\", \"credits\": 4}"
+        },
+        "url": { "raw": "http://localhost:5001/api/courses", "protocol": "http", "host": ["localhost"], "port": "5001", "path": ["api", "courses"] }
+      }
+    }
+  ]
+}
